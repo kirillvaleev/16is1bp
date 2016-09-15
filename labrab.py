@@ -1,3 +1,5 @@
+import math
+
 a=input()
 x=input()
 
