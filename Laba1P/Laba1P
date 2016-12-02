@@ -1,0 +1,15 @@
+from math import cos
+from math import acos
+
+print('Enter X:')
+x = float(input())
+print('Enter A:')
+a = float(input())
+
+G = (3 * (-3 * a * a + 2 * a * x + 21 * x * x) / (35 * a * a + 37 * a * x + 6 * x * x ))
+F = (1 / cos(3 * a * a + 5 * a * x + 2 * x * x))
+Y = acos(-12 * a * a - 4 * a * x + x * x + 1)
+
+print('G = ' + G)
+print('F = ' + F)
+print('Y = ' + Y)
