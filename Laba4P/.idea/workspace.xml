@@ -27,10 +27,10 @@
       <file leaf-file-name="Laba4P.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Laba4P.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+            <state relative-caret-position="-127">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding>
-                <element signature="e#0#20#0" expanded="true" />
+                <element signature="e#15#35#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -384,17 +384,17 @@
         <state relative-caret-position="225">
           <caret line="15" column="23" selection-start-line="0" selection-start-column="0" selection-end-line="76" selection-end-column="13" />
           <folding>
-            <element signature="e#0#20#0" expanded="true" />
+            <element signature="e#15#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Laba4P.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+        <state relative-caret-position="-127">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <element signature="e#0#20#0" expanded="true" />
+            <element signature="e#15#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
