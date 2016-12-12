@@ -76,6 +76,3 @@ while work_pr == 1:
         continue
     else:
         break
-
-
-
