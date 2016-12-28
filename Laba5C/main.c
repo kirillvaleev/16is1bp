@@ -4,11 +4,12 @@
 #include <string.h>
 
 int main() {
-    int index_mas, si_mas, i;
-    double sx, ex, x, a, G, F, Y, step;
+    int index_mas, si_mas, i = 0, b = 0;
+    long int v = 0;
+    double sx, ex, x, a, G = 0, F = 0, Y = 0, step;
     char Function, off;
-    char End_string[255];
-    char example[255];
+    char End_string[100];
+    char example[100];
     for (;;) { /*start*/
         printf("Введите начальное значение Х:");
         scanf("%lf", &sx);
@@ -33,7 +34,7 @@ int main() {
                             G = (3 * (-3 * a * a + 2 * a * x + 21 * x * x) / (35 * a * a + 37 * a * x + 6 * x * x));
                         } else
                             printf("При X = %lf, A = %lf, функцию вычислить невозможно.\n", x, a);
-                        sprintf(mas[si_mas], "%.3lf", G);
+                        sprintf(mas[si_mas], "%lf", G);
                         si_mas += 1;
                     }
                     break;
@@ -66,10 +67,25 @@ int main() {
         for (i=0; i<si_mas+1; i+=1) {
             strcat(End_string, mas[i]);
         }
+        i = 0;
         printf("Полученная строка:\n%s\n", End_string);
-        printf("Введите шаблон: ");
-        scanf("%p\n", &example);
-        printf("%d\n", strcmp(End_string, example, 255));
+        printf("Введите шаблон:\n");
+        scanf("%s", example);
+        while (v < strlen(End_string)) {
+            if (strstr(End_string, example) - End_string + 1 < strlen(End_string)) {
+                i++;
+                v = strstr(End_string, example) - End_string + 1;
+                while (b != v) {
+                    End_string[b] = ' ';
+                    b++;
+                }
+                b = 0;
+            }
+            if (strstr(End_string, example) == 0)
+                break;
+        }
+
+        printf("Найдено совпадений : %d\n", i);
 
         for(;;) { /*off*/
             printf("Продолжить работу программы?(y/n)\n");
