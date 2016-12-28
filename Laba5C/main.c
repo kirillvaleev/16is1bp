@@ -67,6 +67,7 @@ int main() {
         for (i=0; i<si_mas+1; i+=1) {
             strcat(End_string, mas[i]);
         }
+        
         i = 0;
         printf("Полученная строка:\n%s\n", End_string);
         printf("Введите шаблон:\n");
@@ -84,7 +85,6 @@ int main() {
             if (strstr(End_string, example) == 0)
                 break;
         }
-
         printf("Найдено совпадений : %d\n", i);
 
         for(;;) { /*off*/
