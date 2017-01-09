@@ -3,7 +3,7 @@
 
 
 double f(double x) {
-    return (16 * x - 3 * x) + (4 + x * x);
+    return (x * x - 70 * x + 600);
 }
 
 int main() {
