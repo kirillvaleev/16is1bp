@@ -1,0 +1,27 @@
+#include <stdio.h> 
+#include <math.h> 
+
+int main() { 
+
+  int neg = 0, zer = 0;
+  double x, x1, x2, h, y, pos = 0; 
+  const double pi = 3.14; 
+
+  printf("Х1:"); 
+  scanf("%lf", &x1); 
+  printf("Х2:"); 
+  scanf("%lf", &x2); 
+  printf("Введите размер шага:"); 
+  scanf("%lf", &h); 
+
+  printf(" x || y \n------------\n"); 
+  for (x = x1; x <= x2; x += h) { 
+    y = 3 * sin(x) + cos(x);
+    printf("%5.2lf||%5.2lf\n", x, y); 
+    if (y <= -0.00001) neg++;
+    if (y >= 0.00001) pos += y;
+    if (fabs(y) <= 0.00001) zer++;
+  } 
+  printf("\nКол-во отрицательных: %i\nКол-во нулевых: %i\nСумма положительных: %lf\n", neg, zer, pos);
+}
+
