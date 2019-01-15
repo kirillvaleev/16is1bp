@@ -1,11 +1,13 @@
 #include <stdio.h> 
 #include <math.h> 
+#include <string.h>
 
 int main() { 
-
-  int neg = 0, zer = 0;
+  FILE *file;
+  int  i, neg = 0, zer = 0, i_str, x_str = 0;
   double x, x1, x2, h, y, pos = 0; 
   const double pi = 3.14; 
+  char Allstr [255];
 
   printf("Х1:"); 
   scanf("%lf", &x1); 
@@ -14,14 +16,31 @@ int main() {
   printf("Введите размер шага:"); 
   scanf("%lf", &h); 
 
-  printf(" x || y \n------------\n"); 
+  i_str = (x2 - x1) / h;
+  char stroka [i_str] [10];
+  memset(stroka, 0, 100);
+  memset(Allstr, 0, 255);
+
+  printf("  x  ||  y  \n------------\n"); 
+  file = (FILE *)fopen("text.txt", "w+");
+    fprintf(file, "  x  ||  y  \n------------\n", x, y);
   for (x = x1; x <= x2; x += h) { 
     y = 3 * sin(x) + cos(x);
     printf("%5.2lf||%5.2lf\n", x, y); 
+    sprintf(stroka[x_str], "%.2lf", y);
+    x_str++;
+    
+    fprintf(file, "%5.2lf||%5.2lf\n", x, y);
+        
     if (y <= -0.00001) neg++;
     if (y >= 0.00001) pos += y;
     if (fabs(y) <= 0.00001) zer++;
   } 
+  for (i = 0; i < x_str+1; i+=1) {
+            strcat(Allstr, stroka[i]);
+        }
   printf("\nКол-во отрицательных: %i\nКол-во нулевых: %i\nСумма положительных: %lf\n", neg, zer, pos);
+  printf("\nПолученная строка:\n\n%s\n", Allstr);
+  fclose(file);
 }
 
